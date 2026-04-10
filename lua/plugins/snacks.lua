@@ -60,7 +60,7 @@ return {
     {
       '<leader>e',
       function()
-        Snacks.explorer()
+        Snacks.explorer { floating = true }
       end,
       desc = 'File Explorer',
     },
