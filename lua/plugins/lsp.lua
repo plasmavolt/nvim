@@ -112,6 +112,22 @@ return {
             },
           },
         },
+        sqls = {
+          settings = {
+            sqls = {
+              connections = {
+                {
+                  driver = 'postgresql',
+                  dataSourceName = 'host=/tmp port=5432 dbname=pricing_dev_local sslmode=disable',
+                },
+                {
+                  driver = 'postgresql',
+                  dataSourceName = 'host=/tmp port=5432 dbname=ale_temp sslmode=disable',
+                },
+              },
+            },
+          },
+        },
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
