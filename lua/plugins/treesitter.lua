@@ -1,8 +1,12 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  branch = 'master',
+  branch = 'main',
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs',
+  main = 'nvim-treesitter.config',
+  config = function(_, opts)
+    require('nvim-treesitter.install').prefer_git = true
+    require('nvim-treesitter.config').setup(opts)
+  end,
   opts = {
     ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
     auto_install = true,
